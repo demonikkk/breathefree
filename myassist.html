@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myassist</title>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="basic.css">
+    <style>
+        .form1{
+            box-sizing: border-box;
+            border:5px solid #97ca4e;
+            padding: 40px 60px;
+            margin: 30px 30px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .form1 input, option, textarea{
+            font-size: 15px;
+        }
+        button:hover{
+            background-color: var(--clr-neon);
+            color: var(--clr-bg);
+        }
+    </style>
+</head>
+<body>
+    <header class="navheader">
+        <a class="logo">Breathefree</a>
+        <div class="menu-toggle"></div>
+        <nav>
+            <ul>
+                <li><a href="./index.html" >Home</a></li>
+                <li><a href="./aboutus.html">About Us</a></li>
+                <li><a href="./breathingcondition.html">Breathing Conditions</a></li>
+                <li><a href="./inhaler.html">Inhaler A-Z</a></li>
+                <li><a href="./nebulization.html">Nebulization</a></li>
+                <li><a href="./myassist.html" class="active">My Assist</a></li>
+                <li><a href="./berokzindagi.html">Berok Zindagi</a></li>
+
+            </ul>
+        </nav>
+        <div class="clearfix"></div>
+    </header>
+    <h1 class="blogs" style="font-size: 40px;"><center>My Assist</center></h1>
+    <img width=100% src="https://www.breathefree.com/sites/all/themes/breathfree_theme/images/inhaler-educater.jpg"/>
+<h2 class="blog-samples" style="font-size: 25px; padding: 10px 10px"><center>Tell us about you</center></h2>
+<form class="form1 blog-samples" target="_blank" action="https://formspree.io/f/mbjwzepw" method="POST">
+    
+    <label for="f1">Select File to upload ( Only in case if you had any prior Treatment ): </label>
+    <input type="file" id="f1" name="file1" accept="image/jpeg.image/png"><br/><br/>
+    
+    <label for="tel1">Enter your Name: </label>
+    <input type="text" id ="i1" name="username" placeholder="Type Your Name"><br><br>
+    <label for="tel1">Enter your Date Of birth: </label>
+    <input type="text" id ="i1" name="userage" placeholder="XX/XX/XXXX" pattern="[0-9][0-9]-{>31}/[0-9][0-9]/[1-2][0-9][0-9][0-9]" ><br><br>
+
+    
+    <label for="tel2">Enter contact number </label>
+    <input type="tel" id="cont" name="telephone2" placeholder="+91 XXXXXXXXXX" pattern ="[0-9]{3}-[0-9]{4}"><br><br>
+    
+    <label for="num2">Enter your mail adress</label>
+    <input type="email" id="mail" name="number2" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="E.g- johndoe@mail.com"><br/><br/>
+    
+    <label for="dl1">Your city</label>
+    <input list="city" id="city" placeholder="Type your address">
+
+    <datalist id="city">
+    <option value="Delhi" >
+    <option value="Goa">
+    <option value="Delhi">
+    <option value="Bombay">
+    <option value="Kolkata">
+    <option value="Lucknow">
+    <option value="Jalandhar">
+    </datalist>
+    <br/><br/>
+    
+    <label for="diag">Select diagonosis</label>
+    <select name="diagonosis" id="sl-diag">
+    <option value="asthama"> ASTHAMA </option>
+    <option value="lung health test"> LUNG HEALTH TEST</option>
+    <option value="emphysema"> Emphysema </option>
+    </select><br/><br/>
+    
+    <label for ="query">Enter your Query here:</label><br>
+    <textarea id="query" name="query" rows="5" cols="100" placeholder="Your Query goes here"></textarea><br><br>
+
+    <label for="gender">Select your gender</label>
+    <input type="radio" class="gender" name="gender1" value="male" checked/>Male
+    <input type="radio" class="gender" name="gender2" value="female"/>Female
+    <input type="radio" class="gender" name="gender3" value="others"/>Other
+    <br/><br/>
+    
+    <label for="problems">Select other problems in the past (multiple selection): </label><br>
+    <input type="checkbox" id="ds1" value="0">
+    <label for="diabetes">Diabetes</label>
+    <input type="checkbox" id="ds2" value="1">
+    <label for="polio">Polio</label>
+    <input type="checkbox" id="ds3" value="2">
+    <label for="chickenpox">Chicken Pox</label>
+    <input type="checkbox" id="ds4" value="3">
+    <label for="chickenpox">Others</label>
+    <br/><br/>
+    <button type="submit" style="font-size: 20px; margin-left: 50%; padding: 10px 10px; font-weight: 700;" class="blog-samples">SUBMIT</button>
+</form>
+
+
+
+
+</body>
+</html>

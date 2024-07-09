@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Hurricane&family=Poppins:wght@300&display=swap');
+:root {
+    --clr-neon: #97ca4e;
+    --clr-bg: white;
+    --clr-sec-bg: rgb(0, 0, 0);
+    --clr-bg-self: rgba(0, 0, 0, 0.747);
+    --clr-fg-self: var(--clr-neon);
+    --clr-card-shadow: var(--clr-neon);
+    --clr-card-bg: var(--clr-sec-bg);
+    --clr-neon-self: var(--clr-neon);
+  }
+  
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    /*
+      background-image: url("../res/bg.jpg");
+    */
+    background-color: rgb(218, 213, 213);
+  }
+  
+header
+{
+    position: sticky;
+    top: 0;
+    max-width: 1400px;
+    margin-top: 0% auto;
+    padding: 10px;
+    background: rgb(255, 255, 255);
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.logo
+{
+    color: var(--clr-neon);
+    height: 60px;
+    font-size: 54px;
+    line-height: 60px;
+    padding: 0 2px;
+    text-align: center;
+    box-sizing: border-box;
+    float: left;
+    font-weight: 700;
+    text-decoration: none;
+    font-family: 'Hurricane', cursive;
+}
+
+nav
+{
+    float: right;
+}
+
+.clearfix
+{
+    clear: both;
+}
+
+nav ul
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li
+{
+    list-style: none;
+}
+
+nav ul li a
+{
+    font-size: 15px;
+    font-weight: 700;
+    display: inline-block;
+    margin: 8px;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: var(--clr-neon);
+    border: var(--clr-neon) 4px solid;
+    border-radius: 0.5em;
+}
+
+nav ul li a.active,
+nav ul li a:hover
+{
+    background: var(--clr-neon);
+    transition: 0.5s;
+    color: rgb(255, 255, 255);
+}
+
+@media  (max-width: 1400px) 
+{
+    header
+    {
+        margin-top: 0% auto;
+    }
+}
+
+@media  (max-width: 968px) 
+{
+    .menu-toggle
+    {
+        margin: 10px;
+        display: block;
+        height: 40px;
+        width: 40px;
+        background: var(--clr-bg);
+        float: right;
+        cursor: pointer;
+        text-align: center;
+        font-size: 30px;
+        color: var(--clr-   );
+    }
+    .menu-toggle:before
+    {
+        content: '\f0c9';
+        font-family: fontAwesome;
+        line-height: 40px;
+    }
+    .menu-toggle.active:before
+    {
+        content: '\f00d';
+    }
+    nav
+    {
+        display: none;
+    }
+    nav.active
+    {
+        display: block;
+        width: 100%;
+    }
+
+    nav.active ul
+    {
+        display: block;
+    }
+    nav.active ul li
+    {
+        margin: 0;
+    }
+    
+}

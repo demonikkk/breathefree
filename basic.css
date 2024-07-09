@@ -1,0 +1,106 @@
+.sld{
+    display: block;
+    top: 0;
+}
+
+#myBtn1{
+    position: absolute;
+    top: 400px;
+    right: 16px;
+    cursor: pointer;
+    font-size: 40px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    font-weight: 700;
+    background-color: var(--clr-bg);
+    color: var(--clr-neon);
+}
+
+#myBtn2{
+    position: absolute;
+    top: 400px;
+    left: 20px;
+    cursor: pointer;
+    font-size: 40px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    font-weight: 700;
+    color: var(--clr-neon);
+    background-color: var(--clr-bg);
+}
+
+#myBtn1:hover, #myBtn2:hover{
+    color: white;
+    background-color: var(--clr-neon);
+}
+
+.blogs{
+    font-size: 25px;
+    border-bottom:10px solid #97ca4e;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: #6a6a6a;
+}
+
+.blog-samples{
+    padding: 50px 50px;
+    font-size: 20px;
+    color: #6a6a6a;
+}
+.blog-samples p{
+    font-size: 18px;
+}
+
+.btn{
+    cursor: pointer;
+    border:2px solid #97ca4e;
+    box-sizing: border-box;
+    border-radius: 12px;
+    color: var(--clr-bg);
+    background-color: #97ca4e;
+    width: 30%;
+}
+
+.blog-samples img{
+    width: 80%;
+    margin-left: 60px;
+}
+
+.blog1, .blog3{
+    float: left;
+    width: 50%;
+}
+
+.blog2, .blog4{
+    float: right;
+    width: 50%;
+}
+
+.btn:hover{
+    color: #97ca4e;
+    background-color: var(--clr-bg);
+}
+
+.btn-more span{
+    margin: 10px 5px;
+}
+
+.btn-more:hover{
+    background-color: #97ca4e;
+    color: var(--clr-bg);
+}
+
+section{
+    background-color: #303030;
+}
+
+@media  (max-width: 968px) {
+    #myBtn1, #myBtn2{
+        top: 150px;
+        font-size: 25px;
+    }
+    .blog1, .blog2{
+        float: none;
+        width: 100%;
+    }
+}
