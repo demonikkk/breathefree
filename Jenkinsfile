@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/demonikkk/breathefree.git'
+                checkout scm
             }
         }
 
