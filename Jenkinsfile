@@ -26,8 +26,8 @@ pipeline {
             steps {
                 script {
                     sh """
-                    docker kill ${CONTAINER_NAME} | true
-                    docker rm ${CONTAINER_NAME} | true
+                    docker kill ${CONTAINER_NAME} || true
+                    docker rm ${CONTAINER_NAME} || true
                     docker run -d -p 8000:${PORT} --name ${CONTAINER_NAME} ${IMAGE_NAME}
                     """
                 }
