@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('code') {
             steps {
-                sh 'git clone https://github.com/demonikkk/breathefree.git'
+                checkout scm
             }
         }
 
@@ -30,10 +30,10 @@ pipeline {
         }
 
         stage('ssh login') {
-	        steps {
+	    steps {
                  sh '''
-            	     ssh -o StrictHostKeyChecking=no -i /home/ubuntu/terra.pem ubuntu@3.27.213.172 << EOF
-           	         cd ~/terraform/breathefree
+            	     ssh -o StrictHostKeyChecking=no -i /home/ubuntu/terra.pem ubuntu@3.27.163.122 << EOF
+           	     cd ~/terraform/breathefree
             	     terraform init
                      terraform apply -auto-approve
             	     EOF
