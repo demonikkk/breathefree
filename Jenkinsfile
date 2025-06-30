@@ -1,46 +1,44 @@
 pipeline {
     agent any
 
-    environment {
-        IMAGE_NAME = 'kirmada'
-        CONTAINER_NAME = 'kirmanda'
-        PORT = '80'
-    }
-
     stages {
-        stage('Checkout') {
+        stage('code') {
             steps {
-                checkout scm
+                sh 'git clone https://github.com/demonikkk/breathefree.git'
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Image build') {
             steps {
-                script {
-                    sh "docker build -t ${IMAGE_NAME} ."
-                }
+                sh 'docker build -t demon .'
             }
         }
 
-        stage('Deploy Container') {
+        stage('git hub push') {
             steps {
-                script {
-                    sh """
-                    docker kill ${CONTAINER_NAME} || true
-                    docker rm ${CONTAINER_NAME} || true
-                    docker run -d -p 8000:${PORT} --name ${CONTAINER_NAME} ${IMAGE_NAME}
-                    """
-                }
+                sh 'docker tag demon demonikk/breathefree:0.1.0'
             }
         }
-    }
 
-    post {
-        success {
-            echo "Site deployed successfully"
+        stage('image push') {
+            steps {
+                sh '''
+                    docker login -u demonikk -p rickANDmorty
+                    docker push demonikk/breathefree:0.1.0
+                '''
+            }
         }
-        failure {
-            echo "Deployment failed. Please check the logs."
-        }
-    }
+
+        stage('ssh login') {
+	        steps {
+                 sh '''
+            	     ssh -o StrictHostKeyChecking=no -i /home/ubuntu/terra.pem ubuntu@3.27.213.172 << EOF
+           	         cd ~/terraform/breathefree
+            	     terraform init
+                     terraform apply -auto-approve
+            	     EOF
+        	     '''
+    		}
+	    }
+	}
 }
