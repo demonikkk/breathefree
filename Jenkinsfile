@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         version="{0.1.${BUILD_NUMBER}"
+    }
 
     stages {
         stage('code') {
