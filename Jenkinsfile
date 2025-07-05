@@ -32,7 +32,7 @@ pipeline {
         stage('ssh login') {
 	    steps {
                  sh '''
-            	     ssh -o StrictHostKeyChecking=no -i /home/ubuntu/terra.pem ubuntu@3.27.163.122 << EOF
+            	     ssh -o StrictHostKeyChecking=no -i /home/ubuntu/terra.pem ubuntu@3.106.129.114 << EOF
            	     cd ~/terraform/breathefree
             	     terraform init
                      terraform apply -auto-approve
