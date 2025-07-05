@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        version="{0.1.${BUILD_NUMBER}"
-    }
-
     stages {
         stage('code') {
             steps {
@@ -28,19 +24,10 @@ pipeline {
             steps {
                 sh '''
                     docker login -u demonikk -p rickANDmorty
-                    docker push demonikk/breathefree:0.1.${VERSION}
+                    docker push demonikk/breathefree:0.1.0
                 '''
             }
         }
-
-	stage('Prepare init.sh') {
-            steps {
-                sh """
-                    sed 's/__Version__/${VERSION}/g' terraform/breathefree/init.sh > terraform/breathefree/init_temp.sh
-                    mv terraform/breathefree/init_temp.sh terraform/breathefree/init.sh
-                """
-            }
-	}
 
         stage('ssh login') {
 	    steps {
